@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="queList">
+        <item>선택</item>
+        <item>영화제목</item>
+        <item>사자성어</item>
+        <item>수도이름</item>
+    </string-array>
+
+    <string-array name="queListVal">
+        <item></item>
+        <item>movie</item>
+        <item>idiom</item>
+        <item>contry</item>
+    </string-array>
+</resources>
