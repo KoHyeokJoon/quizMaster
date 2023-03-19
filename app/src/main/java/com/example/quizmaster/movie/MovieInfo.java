@@ -1,4 +1,4 @@
-package com.example.quizmaster;
+package com.example.quizmaster.movie;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,42 +9,43 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.quizmaster.R;
 import com.example.quizmaster.idiom.impl.IdiomFriendServiceImpl;
 import com.example.quizmaster.idiom.impl.IdiomSingleServiceImpl;
-import com.example.quizmaster.sudo.impl.SudoFriendServiceImpl;
-import com.example.quizmaster.sudo.impl.SudoSingleServiceImpl;
+import com.example.quizmaster.movie.impl.MovieFriendServiceImpl;
+import com.example.quizmaster.movie.impl.MovieSingleServiceImpl;
 
-public class SudoInfo extends AppCompatActivity {
+public class MovieInfo extends AppCompatActivity {
 
-    Button sudoFriend = null;
-    Button sudoSingle = null;
+    Button movieFriend = null;
+    Button movieSingle = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sudo_info);
+        setContentView(R.layout.movie_info);
 
-        sudoFriend = findViewById(R.id.sudoFriend);
-        sudoSingle = findViewById(R.id.sudoSingle);
+        movieFriend = findViewById(R.id.movieFriend);
+        movieSingle = findViewById(R.id.movieSingle);
 
         Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.show);
-        sudoFriend.startAnimation(animation);
-        sudoSingle.startAnimation(animation);
+        movieFriend.startAnimation(animation);
+        movieSingle.startAnimation(animation);
 
-        sudoSingle.setOnClickListener(new View.OnClickListener() {
+        movieSingle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SudoSingleServiceImpl.class);
+                Intent intent = new Intent(getApplicationContext(), MovieSingleServiceImpl.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.none, R.anim.right_to_left); //자연스럽게 이동
                 finish();
             }
         });
 
-        sudoFriend.setOnClickListener(new View.OnClickListener() {
+        movieFriend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SudoFriendServiceImpl.class);
+                Intent intent = new Intent(getApplicationContext(), MovieFriendServiceImpl.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.none, R.anim.right_to_left); //자연스럽게 이동
                 finish();

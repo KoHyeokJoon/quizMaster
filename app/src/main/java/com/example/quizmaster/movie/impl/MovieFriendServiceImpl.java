@@ -12,7 +12,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.quizmaster.EndPage;
-import com.example.quizmaster.IdiomInfo;
+import com.example.quizmaster.idiom.IdiomInfo;
 import com.example.quizmaster.MainActivity;
 import com.example.quizmaster.R;
 import com.example.quizmaster.data.QuizList;

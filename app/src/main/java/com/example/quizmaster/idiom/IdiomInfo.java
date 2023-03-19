@@ -1,4 +1,6 @@
-package com.example.quizmaster;
+package com.example.quizmaster.idiom;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,44 +9,41 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.quizmaster.R;
 import com.example.quizmaster.idiom.impl.IdiomFriendServiceImpl;
 import com.example.quizmaster.idiom.impl.IdiomSingleServiceImpl;
-import com.example.quizmaster.movie.impl.MovieFriendServiceImpl;
-import com.example.quizmaster.movie.impl.MovieSingleServiceImpl;
 
-public class MovieInfo extends AppCompatActivity {
+public class IdiomInfo extends AppCompatActivity {
 
-    Button movieFriend = null;
-    Button movieSingle = null;
+    Button idiomFriend = null;
+    Button idiomSingle = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.movie_info);
+        setContentView(R.layout.idiom_info);
 
-        movieFriend = findViewById(R.id.movieFriend);
-        movieSingle = findViewById(R.id.movieSingle);
+        idiomFriend = findViewById(R.id.idiomFriend);
+        idiomSingle = findViewById(R.id.idiomSingle);
 
         Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.show);
-        movieFriend.startAnimation(animation);
-        movieSingle.startAnimation(animation);
+        idiomFriend.startAnimation(animation);
+        idiomSingle.startAnimation(animation);
 
-        movieSingle.setOnClickListener(new View.OnClickListener() {
+        idiomSingle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MovieSingleServiceImpl.class);
+                Intent intent = new Intent(getApplicationContext(), IdiomSingleServiceImpl.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.none, R.anim.right_to_left); //자연스럽게 이동
                 finish();
             }
         });
 
-        movieFriend.setOnClickListener(new View.OnClickListener() {
+        idiomFriend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MovieFriendServiceImpl.class);
+                Intent intent = new Intent(getApplicationContext(), IdiomFriendServiceImpl.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.none, R.anim.right_to_left); //자연스럽게 이동
                 finish();

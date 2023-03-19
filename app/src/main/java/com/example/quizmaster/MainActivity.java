@@ -13,6 +13,9 @@ import androidx.constraintlayout.motion.widget.MotionLayout;
 
 import com.example.quizmaster.data.QuizList;
 import com.example.quizmaster.db.RunDataBase;
+import com.example.quizmaster.idiom.IdiomInfo;
+import com.example.quizmaster.movie.MovieInfo;
+import com.example.quizmaster.sudo.SudoInfo;
 
 import java.io.IOException;
 import java.io.InputStream;

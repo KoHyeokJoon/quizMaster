@@ -28,21 +28,21 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".IdiomInfo"
+            android:name=".idiom.IdiomInfo"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MovieInfo"
+            android:name=".movie.MovieInfo"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".SudoInfo"
+            android:name=".sudo.SudoInfo"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

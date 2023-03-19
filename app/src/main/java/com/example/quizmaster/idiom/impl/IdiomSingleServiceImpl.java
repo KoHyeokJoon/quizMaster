@@ -1,9 +1,14 @@
 package com.example.quizmaster.idiom.impl;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -12,7 +17,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.quizmaster.EndPage;
-import com.example.quizmaster.IdiomInfo;
+import com.example.quizmaster.idiom.IdiomInfo;
 import com.example.quizmaster.MainActivity;
 import com.example.quizmaster.R;
 import com.example.quizmaster.data.QuizList;
@@ -54,21 +59,7 @@ public class IdiomSingleServiceImpl extends AppCompatActivity implements StartGa
         idiomResult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //확인버튼
-                String res = idiomAnswer.getText().toString();
-
-                if ("".equals(res)) {
-                    Toast.makeText(getApplicationContext(), "정답을 입력해주세요.", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                if (res.replace(" ", "").equals(quizList.getAnswer().replace(" ", ""))) {
-                    //정답 !
-                }else {
-                    //오답 !
-                }
-
-                move();
+                checkResult();
             }
         });
 
@@ -79,6 +70,16 @@ public class IdiomSingleServiceImpl extends AppCompatActivity implements StartGa
                 Intent intent1 = new Intent(getApplicationContext(), IdiomInfo.class);
                 startActivity(intent1);
                 finish();
+            }
+        });
+
+        /** EditText 관련 event */
+        idiomAnswer.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(idiomAnswer.getWindowToken(), 0);    //hide keyboard
+                return true;
             }
         });
     }
@@ -93,6 +94,25 @@ public class IdiomSingleServiceImpl extends AppCompatActivity implements StartGa
         return false;
     }
 
+    /**
+     * editText 외 터치시 키보드 내리기
+     * @param ev
+     * @return
+     */
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        View view = getCurrentFocus();
+        if (view != null && (ev.getAction() == MotionEvent.ACTION_UP || ev.getAction() == MotionEvent.ACTION_MOVE) && view instanceof EditText && !view.getClass().getName().startsWith("android.webkit.")) {
+            int scrcoords[] = new int[2];
+            view.getLocationOnScreen(scrcoords);
+            float x = ev.getRawX() + view.getLeft() - scrcoords[0];
+            float y = ev.getRawY() + view.getTop() - scrcoords[1];
+            if (x < view.getLeft() || x > view.getRight() || y < view.getTop() || y > view.getBottom())
+                ((InputMethodManager)this.getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow((this.getWindow().getDecorView().getApplicationWindowToken()), 0);
+        }
+
+        return super.dispatchTouchEvent(ev);
+    }
 
     @Override
     public void start(Intent intent) {
@@ -168,5 +188,23 @@ public class IdiomSingleServiceImpl extends AppCompatActivity implements StartGa
         finish();
         startActivity(intent);
         overridePendingTransition(R.anim.none, R.anim.right_to_left); //자연스럽게 이동
+    }
+
+    private void checkResult() {
+        //확인버튼
+        String res = idiomAnswer.getText().toString();
+
+        if ("".equals(res)) {
+            Toast.makeText(getApplicationContext(), "정답을 입력해주세요.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (res.replace(" ", "").equals(quizList.getAnswer().replace(" ", ""))) {
+            //정답 !
+        }else {
+            //오답 !
+        }
+
+        move();
     }
 }
