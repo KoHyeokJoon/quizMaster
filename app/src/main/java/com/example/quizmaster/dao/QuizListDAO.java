@@ -1,13 +1,13 @@
 package com.example.quizmaster.dao;
 
 import androidx.room.Dao;
-import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.RawQuery;
 import androidx.room.Update;
 import androidx.sqlite.db.SupportSQLiteQuery;
 
+import com.example.quizmaster.data.GameScore;
 import com.example.quizmaster.data.QuizList;
 
 import java.util.List;
@@ -35,4 +35,7 @@ public interface QuizListDAO {
 
     @Query("SELECT COUNT(1) FROM QuizList WHERE queGb = :queGb AND answer = :answer")
     public int dupCount(String queGb, String answer);
+
+
+
 }
