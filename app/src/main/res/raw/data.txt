@@ -1,1 +1,22 @@
-D000idiom     question고생 끝에 낙이 온다answer고진감래D000idiom     question지나치게 과하면 결국엔 모자람과 같거나 오히려 못한다answer과유불급
+D000idiom     question 고생 끝에 낙이 온다 answer 고진감래
+D000idiom     question 지나치게 과하면 결국엔 모자람과 같거나 오히려 못한다 answer 과유불급
+D000idiom     question 가혹하게 거두고 죽을 때까지 요구함. 세금을 악랄하게 거두는 혹독한 정치 answer 가렴주구
+D000idiom     question 재주가 있는 사람 (혹은 미인)은 목숨이 짧다. answer 가인박명
+D000idiom     question 달콤한 말이나 이로운 이야기로 남을 꼬시다. answer 감언이설
+D000idiom     question 달면 삼키고 쓰면 뱉는다. 자신에게 이로운 대로만 한다. answer 감탄고토
+D000idiom     question 허물을 고쳐 착한 일로 돌아가다. 마음을 바로 잡다. answer 개과천선
+D000idiom     question 머리와 꼬리를 없애다. 즉, 곧바로 본론으로 들어가다. answer 거두절미
+D000idiom     question 천지를 두고 한판 내기를 걸다. 모든 것을 걸고 마지막 승부를 겨루다. answer 건곤일척
+D000idiom     question 실물을 보면 욕심이 생긴다. answer 견물생심
+D000idiom     question 묶은 자가 그것을 풀어야 한다. 일을 벌인 사람이 마무리 짓는다. answer 결자해지
+D000idiom     question 풀을 묶어 은혜에 보답함. 죽어서도 잊지 않고 은혜를 갚다. answer 결초보은
+D000idiom     question 경솔하고 망령된 행동. 버릇없고 교양없는 행동. answer 경거망동
+D000idiom     question 존경하나 멀리한다.(敬遠) answer 경이원지
+D000idiom     question 한 손바닥으로는 소리가 나지 않는다. 혼자서 일하기는 어렵다. answer 고장난명
+D000idiom     question 괴로움이 다하면 즐거움이 온다. 고생 끝에 낙이 온다. answer 고진감래
+D000idiom     question 혈육 또는 민족끼리 헐뜯고 싸움. answer 골육상잔
+D000idiom     question 허공에 누각 짓기. 허황되고 이루어 질 수 없는 일. answer 공중누각
+D000idiom     question 지나친 겸손은 예의가 아니다. answer 과공비례
+D000idiom     question 관중과 포숙의 사귐. 친구를 이해하고 알아주는 두터운 우정. answer 관포지교
+D000idiom     question 문을 비비고 서로 마주 대함. 학식이나 어떤 능력이 몰라보게 좋아지다. answer 괄목상대
+D000idiom     question 소뿔을 바로잡으려다 소를 잡는다. 작은 것에 연연하다 큰 일을 그르치다. answer 교각살우

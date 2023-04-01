@@ -155,6 +155,7 @@ public class SudoSingleServiceImpl extends AppCompatActivity implements StartGam
         Intent intent1 = new Intent(getApplicationContext(), SudoSingleServiceImpl.class);
         intent1.putExtra("nextIndex", nextIndex + 1);
         intent1.putExtra("stage", stage + 1);
+        intent1.putExtra("score", this.score);
         startActivity(intent1);
         finish();
     }

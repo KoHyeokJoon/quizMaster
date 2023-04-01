@@ -27,6 +27,7 @@ public class IdiomFriendServiceImpl extends AppCompatActivity implements StartGa
     TextView gameTimeInfo = null;
     TextView idiomAnswer = null;
     Button idiomGiveup = null;
+    Button showAnswerBtn = null;
     QuizList quizList = new QuizList();
     Integer nextIndex;
     Integer stage;
@@ -45,8 +46,9 @@ public class IdiomFriendServiceImpl extends AppCompatActivity implements StartGa
         idiomGiveup = findViewById(R.id.idiomGiveup);
         question = findViewById(R.id.question);
         gameTimeInfo = findViewById(R.id.gameTimeInfo);
+        showAnswerBtn = findViewById(R.id.showAnswerBtn);
 
-        Integer time = Integer.parseInt(gameTimeInfo.getText().toString());
+//        Integer time = Integer.parseInt(gameTimeInfo.getText().toString());
 
         countDownTimer = new CountDownTimer(5000, 1000) {
             public void onTick(long millisUntilFinished) {
@@ -66,7 +68,16 @@ public class IdiomFriendServiceImpl extends AppCompatActivity implements StartGa
 
         start(intent);
 
+        /**************************************************************************
+         * ************************************************************************
+         * Event
+         * ************************************************************************
+         * ************************************************************************
+         */
 
+        /**
+         * 포기
+         */
         idiomGiveup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,6 +88,18 @@ public class IdiomFriendServiceImpl extends AppCompatActivity implements StartGa
                 finish();
             }
         });
+
+        /**
+         * 정답보기
+         */
+        showAnswerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                countDownTimer.start();
+                idiomAnswer.setText(quizList.getAnswer());
+            }
+        });
+
     }
 
     @Override
@@ -137,7 +160,7 @@ public class IdiomFriendServiceImpl extends AppCompatActivity implements StartGa
 
         }
 
-        countDownTimer.start();
+//        countDownTimer.start();
         try {
             quizList = quizLists.get((nextIndex)); //index 처리를 위함
         } catch (IndexOutOfBoundsException indexOutOfBoundsException) {
@@ -146,7 +169,7 @@ public class IdiomFriendServiceImpl extends AppCompatActivity implements StartGa
         }
 
         question.setText(quizList.getQuestion());
-        idiomAnswer.setText(quizList.getAnswer());
+//        idiomAnswer.setText(quizList.getAnswer());
     }
 
     @Override

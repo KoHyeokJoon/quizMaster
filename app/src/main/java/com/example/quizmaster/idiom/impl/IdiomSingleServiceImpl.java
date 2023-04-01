@@ -44,7 +44,7 @@ public class IdiomSingleServiceImpl extends AppCompatActivity implements StartGa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_movie_single);
+        setContentView(R.layout.activity_idiom_single);
         int seq = 0;
 
         idiomAnswer = findViewById(R.id.idiomAnswer);
@@ -55,6 +55,13 @@ public class IdiomSingleServiceImpl extends AppCompatActivity implements StartGa
         Intent intent = getIntent();
 
         start(intent);
+
+        /**************************************************************************
+         * ************************************************************************
+         * Event
+         * ************************************************************************
+         * ************************************************************************
+         */
 
         idiomResult.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,7 +147,7 @@ public class IdiomSingleServiceImpl extends AppCompatActivity implements StartGa
 
             quizLists = runDataBase.getResList();
 
-            int maxNum = quizLists.size() - 9 < 1 ? 1 : quizLists.size() - 9;
+            int maxNum = quizLists.size() - 4 < 1 ? 1 : quizLists.size() - 4;
 
             nextIndex = (int) (Math.random() * maxNum); // start number
 
@@ -153,11 +160,15 @@ public class IdiomSingleServiceImpl extends AppCompatActivity implements StartGa
                 return;
             }
 
-            if (stage >= 10) {
-                end();
-            }
+        }
 
 
+        /**
+         * 리스트 초과 또는 스테이지설정값 초과시 end (5로 고정) 2023.04.01
+         */
+
+        if (stage >= 5) {
+            end();
         }
 
         try {
@@ -175,6 +186,7 @@ public class IdiomSingleServiceImpl extends AppCompatActivity implements StartGa
         Intent intent1 = new Intent(getApplicationContext(), IdiomSingleServiceImpl.class);
         intent1.putExtra("nextIndex", nextIndex + 1);
         intent1.putExtra("stage", stage + 1);
+        intent1.putExtra("score", this.score);
         startActivity(intent1);
         finish();
     }
@@ -201,6 +213,7 @@ public class IdiomSingleServiceImpl extends AppCompatActivity implements StartGa
 
         if (res.replace(" ", "").equals(quizList.getAnswer().replace(" ", ""))) {
             //정답 !
+            this.score ++;
         }else {
             //오답 !
         }

@@ -77,8 +77,10 @@ public class MainActivity extends AppCompatActivity {
                 RunDataBase runDataBase = new RunDataBase(getApplicationContext());
 
                 String queGb = d.substring(0, 10).replace(" ", "");
-                String question = d.substring(d.indexOf("question") + 8, d.indexOf("answer"));
-                String answer = d.substring(d.indexOf("answer") + 6, d.length());
+                String question = d.substring(d.indexOf("question") + 8, d.indexOf("answer")).replaceAll("(\r\n|\r|\n|\n\r)", "")
+                        .replace(" ", "");
+                String answer = d.substring(d.indexOf("answer") + 6, d.length()).replaceAll("(\r\n|\r|\n|\n\r)", "")
+                        .replace(" ", "");
 
                 quizList.setQueGb(queGb);
                 quizList.setQuestion(question);
@@ -94,10 +96,10 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                if (!"0000".equals(runDataBase.getCode())) {
-                    //error or duplicated
-                    break;
-                }
+//                if (!"0000".equals(runDataBase.getCode())) {
+//                    //error or duplicated
+//                    break;
+//                }
             }
 
             Log.d("Loading", "데이터 받아오기 완료 ...");
