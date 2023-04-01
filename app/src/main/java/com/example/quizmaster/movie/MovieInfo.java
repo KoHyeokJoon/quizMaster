@@ -10,29 +10,27 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.quizmaster.R;
-import com.example.quizmaster.idiom.impl.IdiomFriendServiceImpl;
-import com.example.quizmaster.idiom.impl.IdiomSingleServiceImpl;
 import com.example.quizmaster.movie.impl.MovieFriendServiceImpl;
 import com.example.quizmaster.movie.impl.MovieSingleServiceImpl;
 
 public class MovieInfo extends AppCompatActivity {
 
-    Button movieFriend = null;
-    Button movieSingle = null;
+    Button startFriend = null;
+    Button startSingle = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.movie_info);
+        setContentView(R.layout.game_info);
 
-        movieFriend = findViewById(R.id.movieFriend);
-        movieSingle = findViewById(R.id.movieSingle);
+        startFriend = findViewById(R.id.startFriend);
+        startSingle = findViewById(R.id.startSingle);
 
         Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.show);
-        movieFriend.startAnimation(animation);
-        movieSingle.startAnimation(animation);
+        startFriend.startAnimation(animation);
+        startSingle.startAnimation(animation);
 
-        movieSingle.setOnClickListener(new View.OnClickListener() {
+        startSingle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MovieSingleServiceImpl.class);
@@ -42,7 +40,7 @@ public class MovieInfo extends AppCompatActivity {
             }
         });
 
-        movieFriend.setOnClickListener(new View.OnClickListener() {
+        startFriend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MovieFriendServiceImpl.class);

@@ -10,29 +10,27 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.quizmaster.R;
-import com.example.quizmaster.idiom.impl.IdiomFriendServiceImpl;
-import com.example.quizmaster.idiom.impl.IdiomSingleServiceImpl;
 import com.example.quizmaster.sudo.impl.SudoFriendServiceImpl;
 import com.example.quizmaster.sudo.impl.SudoSingleServiceImpl;
 
 public class SudoInfo extends AppCompatActivity {
 
-    Button sudoFriend = null;
-    Button sudoSingle = null;
+    Button startFriend = null;
+    Button startSingle = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sudo_info);
+        setContentView(R.layout.game_info);
 
-        sudoFriend = findViewById(R.id.sudoFriend);
-        sudoSingle = findViewById(R.id.sudoSingle);
+        startFriend = findViewById(R.id.startFriend);
+        startSingle = findViewById(R.id.startSingle);
 
         Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.show);
-        sudoFriend.startAnimation(animation);
-        sudoSingle.startAnimation(animation);
+        startFriend.startAnimation(animation);
+        startSingle.startAnimation(animation);
 
-        sudoSingle.setOnClickListener(new View.OnClickListener() {
+        startSingle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), SudoSingleServiceImpl.class);
@@ -42,7 +40,7 @@ public class SudoInfo extends AppCompatActivity {
             }
         });
 
-        sudoFriend.setOnClickListener(new View.OnClickListener() {
+        startFriend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), SudoFriendServiceImpl.class);

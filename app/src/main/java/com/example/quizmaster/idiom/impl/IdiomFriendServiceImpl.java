@@ -25,8 +25,8 @@ public class IdiomFriendServiceImpl extends AppCompatActivity implements StartGa
 
     TextView question = null;
     TextView gameTimeInfo = null;
-    TextView idiomAnswer = null;
-    Button idiomGiveup = null;
+    TextView answer = null;
+    Button giveup = null;
     Button showAnswerBtn = null;
     QuizList quizList = new QuizList();
     Integer nextIndex;
@@ -40,10 +40,10 @@ public class IdiomFriendServiceImpl extends AppCompatActivity implements StartGa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_idiom_friend);
+        setContentView(R.layout.activity_game_friend);
 
-        idiomAnswer = findViewById(R.id.idiomAnswer);
-        idiomGiveup = findViewById(R.id.idiomGiveup);
+        answer = findViewById(R.id.answer);
+        giveup = findViewById(R.id.giveup);
         question = findViewById(R.id.question);
         gameTimeInfo = findViewById(R.id.gameTimeInfo);
         showAnswerBtn = findViewById(R.id.showAnswerBtn);
@@ -78,7 +78,7 @@ public class IdiomFriendServiceImpl extends AppCompatActivity implements StartGa
         /**
          * 포기
          */
-        idiomGiveup.setOnClickListener(new View.OnClickListener() {
+        giveup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // 포기버튼 / move end page
@@ -96,7 +96,7 @@ public class IdiomFriendServiceImpl extends AppCompatActivity implements StartGa
             @Override
             public void onClick(View view) {
                 countDownTimer.start();
-                idiomAnswer.setText(quizList.getAnswer());
+                answer.setText(quizList.getAnswer());
             }
         });
 
@@ -118,7 +118,7 @@ public class IdiomFriendServiceImpl extends AppCompatActivity implements StartGa
 
 
         stage = intent.hasExtra("stage") ? intent.getIntExtra("stage", 1) : 1;
-        score = intent.hasExtra("score") ? intent.getIntExtra("score", 0) : 0;
+//        score = intent.hasExtra("score") ? intent.getIntExtra("score", 0) : 0;
         nextIndex = intent.hasExtra("nextIndex") ? intent.getIntExtra("nextIndex", 0) : 0;
 
         if (stage == 1) {
@@ -160,6 +160,15 @@ public class IdiomFriendServiceImpl extends AppCompatActivity implements StartGa
 
         }
 
+
+        /**
+         * 리스트 초과 또는 스테이지설정값 초과시 end (5로 고정) 2023.04.01
+         */
+
+        if (stage >= 6) {
+            end();
+        }
+
 //        countDownTimer.start();
         try {
             quizList = quizLists.get((nextIndex)); //index 처리를 위함
@@ -186,8 +195,10 @@ public class IdiomFriendServiceImpl extends AppCompatActivity implements StartGa
     public void end() {
         countDownTimer.cancel();
         Intent intent = new Intent(getApplicationContext(), EndPage.class);
-        intent.putExtra("score", this.score);
+//        intent.putExtra("score", this.score);
         intent.putExtra("stage", this.stage);
+        intent.putExtra("gameGb", "F");
+        intent.putExtra("queGb", "idiom");
         finish();
         startActivity(intent);
         overridePendingTransition(R.anim.none, R.anim.right_to_left); //자연스럽게 이동

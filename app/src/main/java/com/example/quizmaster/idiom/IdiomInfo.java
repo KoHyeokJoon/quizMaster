@@ -15,22 +15,22 @@ import com.example.quizmaster.idiom.impl.IdiomSingleServiceImpl;
 
 public class IdiomInfo extends AppCompatActivity {
 
-    Button idiomFriend = null;
-    Button idiomSingle = null;
+    Button startFriend = null;
+    Button startSingle = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.idiom_info);
+        setContentView(R.layout.game_info);
 
-        idiomFriend = findViewById(R.id.idiomFriend);
-        idiomSingle = findViewById(R.id.idiomSingle);
+        startFriend = findViewById(R.id.startFriend);
+        startSingle = findViewById(R.id.startSingle);
 
         Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.show);
-        idiomFriend.startAnimation(animation);
-        idiomSingle.startAnimation(animation);
+        startFriend.startAnimation(animation);
+        startSingle.startAnimation(animation);
 
-        idiomSingle.setOnClickListener(new View.OnClickListener() {
+        startSingle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), IdiomSingleServiceImpl.class);
@@ -40,7 +40,7 @@ public class IdiomInfo extends AppCompatActivity {
             }
         });
 
-        idiomFriend.setOnClickListener(new View.OnClickListener() {
+        startFriend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), IdiomFriendServiceImpl.class);

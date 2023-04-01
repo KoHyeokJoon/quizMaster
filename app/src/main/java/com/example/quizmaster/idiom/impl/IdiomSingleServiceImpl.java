@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,9 +28,9 @@ import java.util.List;
 public class IdiomSingleServiceImpl extends AppCompatActivity implements StartGameService {
 
     TextView question = null;
-    EditText idiomAnswer = null;
-    Button idiomResult = null;
-    Button idiomGiveup = null;
+    EditText answer = null;
+    Button result = null;
+    Button giveup = null;
     QuizList quizList = new QuizList();
     Integer nextIndex;
     Integer stage;
@@ -44,12 +43,12 @@ public class IdiomSingleServiceImpl extends AppCompatActivity implements StartGa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_idiom_single);
+        setContentView(R.layout.activity_game_single);
         int seq = 0;
 
-        idiomAnswer = findViewById(R.id.idiomAnswer);
-        idiomResult = findViewById(R.id.idiomResult);
-        idiomGiveup = findViewById(R.id.idiomGiveup);
+        answer = findViewById(R.id.answer);
+        result = findViewById(R.id.result);
+        giveup = findViewById(R.id.giveup);
         question = findViewById(R.id.question);
 
         Intent intent = getIntent();
@@ -63,14 +62,14 @@ public class IdiomSingleServiceImpl extends AppCompatActivity implements StartGa
          * ************************************************************************
          */
 
-        idiomResult.setOnClickListener(new View.OnClickListener() {
+        result.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 checkResult();
             }
         });
 
-        idiomGiveup.setOnClickListener(new View.OnClickListener() {
+        giveup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // 포기버튼 / move end page
@@ -81,11 +80,13 @@ public class IdiomSingleServiceImpl extends AppCompatActivity implements StartGa
         });
 
         /** EditText 관련 event */
-        idiomAnswer.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        answer.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(idiomAnswer.getWindowToken(), 0);    //hide keyboard
+                imm.hideSoftInputFromWindow(answer.getWindowToken(), 0);    //hide keyboard
+
+                move();
                 return true;
             }
         });
@@ -167,7 +168,7 @@ public class IdiomSingleServiceImpl extends AppCompatActivity implements StartGa
          * 리스트 초과 또는 스테이지설정값 초과시 end (5로 고정) 2023.04.01
          */
 
-        if (stage >= 5) {
+        if (stage >= 2) {
             end();
         }
 
@@ -197,6 +198,7 @@ public class IdiomSingleServiceImpl extends AppCompatActivity implements StartGa
         Intent intent = new Intent(getApplicationContext(), EndPage.class);
         intent.putExtra("score", this.score);
         intent.putExtra("stage", this.stage);
+        intent.putExtra("gameGb", "S");
         finish();
         startActivity(intent);
         overridePendingTransition(R.anim.none, R.anim.right_to_left); //자연스럽게 이동
@@ -204,7 +206,7 @@ public class IdiomSingleServiceImpl extends AppCompatActivity implements StartGa
 
     private void checkResult() {
         //확인버튼
-        String res = idiomAnswer.getText().toString();
+        String res = answer.getText().toString();
 
         if ("".equals(res)) {
             Toast.makeText(getApplicationContext(), "정답을 입력해주세요.", Toast.LENGTH_SHORT).show();

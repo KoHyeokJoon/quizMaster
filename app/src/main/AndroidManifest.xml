@@ -63,21 +63,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".movie.impl.MovieSingleServiceImpl"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".movie.impl.MovieFriendServiceImpl"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".sudo.impl.SudoSingleServiceImpl"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

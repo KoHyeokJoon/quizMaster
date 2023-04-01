@@ -1,15 +1,14 @@
 package com.example.quizmaster.db;
 
 import android.content.Context;
-import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
-import android.widget.Toast;
 
 import androidx.sqlite.db.SimpleSQLiteQuery;
 
+import com.example.quizmaster.dao.GameScoreDAO;
 import com.example.quizmaster.dao.QuizListDAO;
+import com.example.quizmaster.data.GameScore;
 import com.example.quizmaster.data.QuizList;
 
 import org.apache.commons.lang3.StringUtils;
@@ -21,11 +20,14 @@ public class RunDataBase extends Thread {
     private static DataBase dataBase = null;
     private Context context;
     private static QuizListDAO quizListDAO = null;
+    private static GameScoreDAO gameScoreDAO = null;
     private String order;
     private QuizList quizList;
     private String query;
     private List<QuizList> resList = null;
     private String code = "9999";
+    private GameScore gameScore = null;
+    private int per = 0;
 
 
     public RunDataBase(Context context) {
@@ -88,6 +90,18 @@ public class RunDataBase extends Thread {
                         resList = quizListDAO.dynamic(simpleSQLiteQuery);
                         code = "0000";
                         break;
+                    case "score_insert":
+                        gameScoreDAO.insertGameScore(gameScore);
+                        code = "0000";
+                        break;
+                    case "score_select":
+                        int totCnt = gameScoreDAO.getGameScoreCnt(gameScore.getQueGb());
+                        int rank = gameScoreDAO.getRank(gameScore.getQueGb(), gameScore.getScore()) + 1;
+
+                        this.per = rank / totCnt * 100;
+
+                        code = "0000";
+                        break;
                 }
 
             }
@@ -118,6 +132,10 @@ public class RunDataBase extends Thread {
         return code;
     }
 
+    public Integer getPer() {
+        return per;
+    }
+
     public void setOrder(String order) {
         this.order = order;
     }
@@ -128,5 +146,9 @@ public class RunDataBase extends Thread {
 
     public void setQuizList(QuizList quizList) {
         this.quizList = quizList;
+    }
+
+    public void setGameScore(GameScore gameScore) {
+        this.gameScore = gameScore;
     }
 }

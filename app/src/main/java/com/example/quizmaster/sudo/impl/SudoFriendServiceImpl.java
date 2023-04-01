@@ -25,8 +25,8 @@ public class SudoFriendServiceImpl extends AppCompatActivity implements StartGam
 
     TextView question = null;
     TextView gameTimeInfo = null;
-    TextView idiomAnswer = null;
-    Button idiomGiveup = null;
+    TextView answer = null;
+    Button giveup = null;
     QuizList quizList = new QuizList();
     Integer nextIndex;
     Integer stage;
@@ -39,10 +39,10 @@ public class SudoFriendServiceImpl extends AppCompatActivity implements StartGam
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sudo_friend);
+        setContentView(R.layout.activity_game_friend);
 
-        idiomAnswer = findViewById(R.id.idiomAnswer);
-        idiomGiveup = findViewById(R.id.idiomGiveup);
+        answer = findViewById(R.id.answer);
+        giveup = findViewById(R.id.giveup);
         question = findViewById(R.id.question);
         gameTimeInfo = findViewById(R.id.gameTimeInfo);
 
@@ -67,7 +67,7 @@ public class SudoFriendServiceImpl extends AppCompatActivity implements StartGam
         start(intent);
 
 
-        idiomGiveup.setOnClickListener(new View.OnClickListener() {
+        giveup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // 포기버튼 / move end page
@@ -95,7 +95,7 @@ public class SudoFriendServiceImpl extends AppCompatActivity implements StartGam
 
 
         stage = intent.hasExtra("stage") ? intent.getIntExtra("stage", 1) : 1;
-        score = intent.hasExtra("score") ? intent.getIntExtra("score", 0) : 0;
+//        score = intent.hasExtra("score") ? intent.getIntExtra("score", 0) : 0;
         nextIndex = intent.hasExtra("nextIndex") ? intent.getIntExtra("nextIndex", 0) : 0;
 
         if (stage == 1) {
@@ -146,7 +146,7 @@ public class SudoFriendServiceImpl extends AppCompatActivity implements StartGam
         }
 
         question.setText(quizList.getQuestion());
-        idiomAnswer.setText(quizList.getAnswer());
+        answer.setText(quizList.getAnswer());
     }
 
     @Override
@@ -163,8 +163,10 @@ public class SudoFriendServiceImpl extends AppCompatActivity implements StartGam
     public void end() {
         countDownTimer.cancel();
         Intent intent = new Intent(getApplicationContext(), EndPage.class);
-        intent.putExtra("score", this.score);
+//        intent.putExtra("score", this.score);
         intent.putExtra("stage", this.stage);
+        intent.putExtra("gameGb", "F");
+        intent.putExtra("queGb", "sudo");
         finish();
         startActivity(intent);
         overridePendingTransition(R.anim.none, R.anim.right_to_left); //자연스럽게 이동

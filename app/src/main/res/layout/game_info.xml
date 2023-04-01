@@ -18,7 +18,9 @@
         android:layout_weight="2"
         android:layout_margin="20dp"
         android:textAlignment="center"
-        android:text="규칙\n블라블라~">
+        android:text="* 사람들과 할래요!\n- 시작시 랜덤으로 문제가 나옵니다. 한 사람이 문제를 말하고 정답보기 버튼을 누르면 정답이 화면에 표출되고 5초안에 정답을 말해야 합니다.
+         \n-시간초과시 자동으로 화면이 넘어가고 이어서 문제를 말합니다.
+        \n\n*혼자 할래요!\n-시작시 랜덤으로 문제가 나옵니다. 정답을 입력하여 확인 버튼을 눌러줍니다.\n-확인버튼 클릭 시 자동으로 화면이 넘어가고 이어서 게임을 이어갑니다.">
     </TextView>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -26,7 +28,7 @@
         android:layout_weight="1">
 
         <Button
-            android:id="@+id/sudoFriend"
+            android:id="@+id/startFriend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="사람들과 할래요!"
@@ -38,7 +40,7 @@
             app:layout_constraintVertical_bias="0.492" />
 
         <Button
-            android:id="@+id/sudoSingle"
+            android:id="@+id/startSingle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="혼자 할래요!"
