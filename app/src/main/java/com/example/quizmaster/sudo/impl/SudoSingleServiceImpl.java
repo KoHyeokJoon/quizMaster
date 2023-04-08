@@ -197,6 +197,7 @@ public class SudoSingleServiceImpl extends AppCompatActivity implements StartGam
         intent.putExtra("score", this.score);
         intent.putExtra("stage", this.stage);
         intent.putExtra("gameGb", "S");
+        intent.putExtra("queGb", "sudo");
         finish();
         startActivity(intent);
         overridePendingTransition(R.anim.none, R.anim.right_to_left); //자연스럽게 이동

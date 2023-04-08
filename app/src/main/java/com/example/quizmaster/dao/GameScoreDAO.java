@@ -17,10 +17,10 @@ public interface GameScoreDAO {
 
     // game score
     @Insert
-    public void insertGameScore(GameScore gameScore);
+    void insertGameScore(GameScore gameScore);
 
     @Update
-    public void updateGameScore(GameScore gameScore);
+    void updateGameScore(GameScore gameScore);
 
     @Query("SELECT COUNT(1) FROM GameScore WHERE queGb = :queGb")
     Integer getGameScoreCnt(String queGb);

@@ -3,8 +3,8 @@
 
     <FrameLayout
             android:id="@+id/mainSudoQuiz"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:background="@drawable/sudo_main"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -19,8 +19,8 @@
 
     <FrameLayout
             android:id="@+id/mainIdiomQuiz"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:background="@drawable/idiom_main"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -35,8 +35,8 @@
 
     <FrameLayout
             android:id="@+id/mainMovieQuiz"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:background="@drawable/movie_main"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -51,8 +51,8 @@
 
     <FrameLayout
         android:id="@+id/addDataBtn"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:background="@android:color/holo_red_light"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -7,7 +7,7 @@
     <Transition
             motion:constraintSetStart="@id/s1"
             motion:constraintSetEnd="@id/s2"
-            motion:duration="500">
+            motion:duration="250">
         <KeyFrameSet>
             <KeyAttribute
                     motion:framePosition="30"
@@ -22,7 +22,7 @@
     <Transition
             motion:constraintSetStart="@id/s2"
             motion:constraintSetEnd="@id/s1"
-            motion:duration="500">
+            motion:duration="250">
         <KeyFrameSet>
             <KeyAttribute
                     motion:framePosition="70"
@@ -37,7 +37,7 @@
     <Transition
             motion:constraintSetStart="@id/s2"
             motion:constraintSetEnd="@id/s3"
-            motion:duration="500">
+            motion:duration="250">
         <KeyFrameSet>
             <KeyAttribute
                     motion:framePosition="30"
@@ -52,7 +52,7 @@
     <Transition
             motion:constraintSetStart="@id/s3"
             motion:constraintSetEnd="@id/s2"
-            motion:duration="500">
+            motion:duration="250">
         <KeyFrameSet>
             <KeyAttribute
                     motion:framePosition="70"
@@ -69,7 +69,7 @@
     <Transition
         motion:constraintSetStart="@id/s3"
         motion:constraintSetEnd="@id/s4"
-        motion:duration="500">
+        motion:duration="250">
         <KeyFrameSet>
             <KeyAttribute
                 motion:framePosition="30"
@@ -85,7 +85,7 @@
     <Transition
         motion:constraintSetStart="@id/s4"
         motion:constraintSetEnd="@id/s3"
-        motion:duration="500">
+        motion:duration="250">
         <KeyFrameSet>
             <KeyAttribute
                 motion:framePosition="70"
@@ -104,13 +104,13 @@
             <Transform android:rotationY="0" android:translationX="0dp"/>
         </Constraint>
         <Constraint android:id="@+id/mainIdiomQuiz">
-            <Transform android:rotationY="-15" android:translationX="250dp"/>
+            <Transform android:rotationY="-15" android:translationX="200dp"/>
         </Constraint>
         <Constraint android:id="@+id/mainMovieQuiz">
-            <Transform android:rotationY="-15" android:translationX="500dp"/>
+            <Transform android:rotationY="-15" android:translationX="400dp"/>
         </Constraint>
         <Constraint android:id="@+id/addDataBtn">
-            <Transform android:rotationY="-15" android:translationX="750dp"/>
+            <Transform android:rotationY="-15" android:translationX="600dp"/>
         </Constraint>
     </ConstraintSet>
 
@@ -130,11 +130,11 @@
         </Constraint>
 
         <Constraint android:id="@id/mainMovieQuiz">
-            <Transform android:rotationY="-15" android:translationX="250dp"/>
+            <Transform android:rotationY="-15" android:translationX="200dp"/>
         </Constraint>
 
         <Constraint android:id="@id/addDataBtn">
-            <Transform android:rotationY="-30" android:translationX="500dp"/>
+            <Transform android:rotationY="-30" android:translationX="400dp"/>
         </Constraint>
     </ConstraintSet>
 
@@ -164,7 +164,7 @@
         </Constraint>
 
         <Constraint android:id="@id/addDataBtn">
-            <Transform android:rotationY="-15" android:translationX="250dp"/>
+            <Transform android:rotationY="-15" android:translationX="200dp"/>
         </Constraint>
 
     </ConstraintSet>

@@ -7,6 +7,9 @@ import androidx.room.PrimaryKey;
 @Entity
 public class GameScore {
 
+    @PrimaryKey(autoGenerate = true) //자동 ID 할당
+    public int seq;
+
     @ColumnInfo(name = "queGb")
     public String queGb;
 
@@ -14,7 +17,7 @@ public class GameScore {
     public Integer score;
 
     @ColumnInfo(name = "gameGb")
-    public String gameGb;
+    public String gameGb; // single or friend
 
 
     public void setQueGb(String queGb) {

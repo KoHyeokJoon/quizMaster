@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         View mainIdiomQuiz = this.findViewById(R.id.mainIdiomQuiz);
         View mainMovieQuiz = this.findViewById(R.id.mainMovieQuiz);
         View addDataBtn = this.findViewById(R.id.addDataBtn);
-
 
         if (isStart()) {
             Log.d("Loading", "데이터 받아오는중 ...");
@@ -115,6 +115,46 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+
+        /**
+         * drag
+         */
+//        motionLayout.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View view, MotionEvent motionEvent) {
+//
+//                float x = 0;
+//                if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+//                    // 최초 터치 x값 저장
+//                    x = motionEvent.getX();
+//                    Log.d("down touch", String.valueOf(motionEvent.getX()));
+//                }
+//
+//                if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
+//                    // 손가락을 뗐을때
+//                    x -= motionEvent.getX();
+//
+//                    Log.d("up touch", String.valueOf(motionEvent.getX()));
+//
+//                    if (Math.abs(x) < 100) {
+//                        return false;
+//                    }
+//
+//                    if (x > 0) {
+//                        // right -> left
+//                        switch (MainActivity.this.selectedIndex) {
+//                            case 0:
+//                                //현재 sudo인 상태
+//
+//                        }
+//                    }
+//
+//                }
+//
+//                return false;
+//            }
+//        });
+
         mainSudoQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -140,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+//
         mainIdiomQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

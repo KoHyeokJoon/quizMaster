@@ -25,16 +25,16 @@ public interface QuizListDAO {
     List<QuizList> dynamic(SupportSQLiteQuery query);
 
     @Insert
-    public void insertIdiomList(QuizList idiomQuizList);
+    void insertIdiomList(QuizList idiomQuizList);
 
     @Update
-    public void updateIdiom(QuizList idiomQuizList);
+    void updateIdiom(QuizList idiomQuizList);
 
     @Query("DELETE FROM QuizList WHERE queGb = :queGb")
-    public void deleteItems(String queGb);
+    void deleteItems(String queGb);
 
     @Query("SELECT COUNT(1) FROM QuizList WHERE queGb = :queGb AND answer = :answer")
-    public int dupCount(String queGb, String answer);
+    int dupCount(String queGb, String answer);
 
 
 

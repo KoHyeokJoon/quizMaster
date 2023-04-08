@@ -27,6 +27,7 @@ public class SudoFriendServiceImpl extends AppCompatActivity implements StartGam
     TextView gameTimeInfo = null;
     TextView answer = null;
     Button giveup = null;
+    Button showAnswerBtn = null;
     QuizList quizList = new QuizList();
     Integer nextIndex;
     Integer stage;
@@ -45,8 +46,9 @@ public class SudoFriendServiceImpl extends AppCompatActivity implements StartGam
         giveup = findViewById(R.id.giveup);
         question = findViewById(R.id.question);
         gameTimeInfo = findViewById(R.id.gameTimeInfo);
+        showAnswerBtn = findViewById(R.id.showAnswerBtn);
 
-        Integer time = Integer.parseInt(gameTimeInfo.getText().toString());
+//        Integer time = Integer.parseInt(gameTimeInfo.getText().toString());
 
         countDownTimer = new CountDownTimer(5000, 1000) {
             public void onTick(long millisUntilFinished) {
@@ -66,6 +68,12 @@ public class SudoFriendServiceImpl extends AppCompatActivity implements StartGam
 
         start(intent);
 
+        /**************************************************************************
+         * ************************************************************************
+         * Event
+         * ************************************************************************
+         * ************************************************************************
+         */
 
         giveup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +83,17 @@ public class SudoFriendServiceImpl extends AppCompatActivity implements StartGam
                 Intent intent1 = new Intent(getApplicationContext(), IdiomInfo.class);
                 startActivity(intent1);
                 finish();
+            }
+        });
+
+        /**
+         * 정답보기
+         */
+        showAnswerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                countDownTimer.start();
+                answer.setText(quizList.getAnswer());
             }
         });
     }

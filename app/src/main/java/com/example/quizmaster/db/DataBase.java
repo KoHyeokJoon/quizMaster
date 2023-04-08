@@ -6,15 +6,20 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
+import com.example.quizmaster.dao.GameScoreDAO;
 import com.example.quizmaster.dao.QuizListDAO;
+import com.example.quizmaster.data.GameScore;
 import com.example.quizmaster.data.QuizList;
 
-@Database(entities = {QuizList.class}, version = 2)
+@Database(entities = {QuizList.class, GameScore.class}
+        , version = 2)
 public abstract class DataBase extends RoomDatabase {
 
     private static DataBase INSTANCE = null;
 
     public abstract QuizListDAO quizListDAO();
+
+    public abstract GameScoreDAO gameScoreDAO();
 
     public static DataBase getInstance(Context context) {
         if (INSTANCE == null) {

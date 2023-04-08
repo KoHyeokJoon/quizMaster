@@ -27,7 +27,7 @@ public class RunDataBase extends Thread {
     private List<QuizList> resList = null;
     private String code = "9999";
     private GameScore gameScore = null;
-    private int per = 0;
+    private double per = 0;
 
 
     public RunDataBase(Context context) {
@@ -36,6 +36,8 @@ public class RunDataBase extends Thread {
 
         //dao 정의
         quizListDAO = dataBase.quizListDAO();
+
+        gameScoreDAO = dataBase.gameScoreDAO();
 
         this.context = context;
     }
@@ -48,8 +50,24 @@ public class RunDataBase extends Thread {
         //dao 정의
         quizListDAO = dataBase.quizListDAO();
 
+        gameScoreDAO = dataBase.gameScoreDAO();
+
         this.context = context;
         this.quizList = quizList;
+    }
+
+    //생성자, order, model 필수
+    public RunDataBase(Context context, GameScore gameScore) {
+        //실행, db 생성, 접근
+        dataBase = DataBase.getInstance(context);
+
+        //dao 정의
+        quizListDAO = dataBase.quizListDAO();
+
+        gameScoreDAO = dataBase.gameScoreDAO();
+
+        this.context = context;
+        this.gameScore = gameScore;
     }
 
 
@@ -95,10 +113,13 @@ public class RunDataBase extends Thread {
                         code = "0000";
                         break;
                     case "score_select":
-                        int totCnt = gameScoreDAO.getGameScoreCnt(gameScore.getQueGb());
-                        int rank = gameScoreDAO.getRank(gameScore.getQueGb(), gameScore.getScore()) + 1;
+                        float totCnt = gameScoreDAO.getGameScoreCnt(gameScore.getQueGb()); // 구분에 따른 전체 게임 횟수 카운트
+                        float rank = gameScoreDAO.getRank(gameScore.getQueGb(), gameScore.getScore()) + 1; // 자신의 점수 윗단 카운트
 
-                        this.per = rank / totCnt * 100;
+                        if (totCnt != 0) {
+                            this.per = rank / totCnt * 100;
+                        }
+//                        this.per = totCnt == 0 ? 0 : (rank / totCnt) * 100;
 
                         code = "0000";
                         break;
@@ -132,7 +153,7 @@ public class RunDataBase extends Thread {
         return code;
     }
 
-    public Integer getPer() {
+    public double getPer() {
         return per;
     }
 

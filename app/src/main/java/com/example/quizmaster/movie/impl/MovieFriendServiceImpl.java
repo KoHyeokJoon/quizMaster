@@ -27,6 +27,7 @@ public class MovieFriendServiceImpl extends AppCompatActivity implements StartGa
     TextView gameTimeInfo = null;
     TextView answer = null;
     Button giveup = null;
+    Button showAnswerBtn = null;
     QuizList quizList = new QuizList();
     Integer nextIndex;
     Integer stage;
@@ -45,8 +46,9 @@ public class MovieFriendServiceImpl extends AppCompatActivity implements StartGa
         giveup = findViewById(R.id.giveup);
         question = findViewById(R.id.question);
         gameTimeInfo = findViewById(R.id.gameTimeInfo);
+        showAnswerBtn = findViewById(R.id.showAnswerBtn);
 
-        Integer time = Integer.parseInt(gameTimeInfo.getText().toString());
+//        Integer time = Integer.parseInt(gameTimeInfo.getText().toString());
 
         countDownTimer = new CountDownTimer(5000, 1000) {
             public void onTick(long millisUntilFinished) {
@@ -67,6 +69,17 @@ public class MovieFriendServiceImpl extends AppCompatActivity implements StartGa
         start(intent);
 
 
+        /**************************************************************************
+         * ************************************************************************
+         * Event
+         * ************************************************************************
+         * ************************************************************************
+         */
+
+        /**
+         * 포기
+         */
+
         giveup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,6 +88,17 @@ public class MovieFriendServiceImpl extends AppCompatActivity implements StartGa
                 Intent intent1 = new Intent(getApplicationContext(), IdiomInfo.class);
                 startActivity(intent1);
                 finish();
+            }
+        });
+
+        /**
+         * 정답보기
+         */
+        showAnswerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                countDownTimer.start();
+                answer.setText(quizList.getAnswer());
             }
         });
     }
