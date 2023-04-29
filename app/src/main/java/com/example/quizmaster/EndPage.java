@@ -53,55 +53,68 @@ public class EndPage extends AppCompatActivity {
                 int point = 100 / stage; // 문제당 점수
                 int singleScore = score * point; // 최종점수
 
-                RunDataBase rb1 = new RunDataBase(getApplicationContext());
-                GameScore gameScore = new GameScore();
-
-                gameScore.setQueGb(queGb);
-                gameScore.setScore(singleScore);
-
-                rb1.setOrder("score_select");
-                rb1.setGameScore(gameScore);
-
-                rb1.start();
-
-                try {
-                    rb1.join();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-                double per = rb1.getPer() == 0 ? 0 : Math.round(rb1.getPer() * 100 / 100); //상위 %
+//                RunDataBase rb1 = new RunDataBase(getApplicationContext());
+//                GameScore gameScore = new GameScore();
+//
+//                gameScore.setQueGb(queGb);
+//                gameScore.setScore(singleScore);
+//
+//                rb1.setOrder("score_select");
+//                rb1.setGameScore(gameScore);
+//
+//                rb1.start();
+//
+//                try {
+//                    rb1.join();
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//
+//                double per = rb1.getPer() == 0 ? 0 : Math.round(rb1.getPer() * 100 / 100); //상위 %
+//
+//                /**
+//                 * score insert ***************
+//                 *
+//                 *
+//                 * */
+//                RunDataBase rb2 = new RunDataBase(getApplicationContext());
+//
+//                rb2.setOrder("score_insert");
+//                rb2.setGameScore(gameScore);
+//
+//                rb2.start();
+//
+//                try {
+//                    rb2.join();
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//
+////                textView.setText(score + "/" + stage);
+//                if (per == 0) {
+//                    //최초 풀이자
+//                    textView.setText(singleScore + "점 입니다.\n 자신만의 질문과 답변을 만들어보세요!\n(설정에서 질문과 답변을 만들 수 있습니다.)");
+//                }else if (per <= 30) {
+//                    // 상위 30이상
+//                    textView.setText("상위 " + per + "% 입니다. 축하드립니다!\n자신만의 질문과 답변을 만들어보세요!\n(설정에서 질문과 답변을 만들 수 있습니다.)");
+//                }else if (per <= 60) {
+//                    // 상위 60이상
+//                    textView.setText("상위 " + per + "% 입니다. 조금만 더 노력해보세요!\n자신만의 질문과 답변을 만들어보세요!\n(설정에서 질문과 답변을 만들 수 있습니다.)");
+//                }else {
+//                    textView.setText("상위 " + per + "% 입니다. 많이 노력하셔야 겠군요!\n자신만의 질문과 답변을 만들어보세요!\n(설정에서 질문과 답변을 만들 수 있습니다.)");
+//                }
 
                 /**
-                 * score insert ***************
-                 *
-                 *
-                 * */
-                RunDataBase rb2 = new RunDataBase(getApplicationContext());
-
-                rb2.setOrder("score_insert");
-                rb2.setGameScore(gameScore);
-
-                rb2.start();
-
-                try {
-                    rb2.join();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-//                textView.setText(score + "/" + stage);
-                if (per == 0) {
-                    //최초 풀이자
+                 * score 로 변경
+                 */
+                if (singleScore > 80) {
+                    textView.setText("축하합니다!\n" + singleScore + "점 입니다.\n 자신만의 질문과 답변을 만들어보세요!\n(설정에서 질문과 답변을 만들 수 있습니다.)");
+                }else if (singleScore > 50) {
+                    textView.setText("좀 더 노력해보세요!\n" + singleScore + "점 입니다.\n 자신만의 질문과 답변을 만들어보세요!\n(설정에서 질문과 답변을 만들 수 있습니다.)");
+                }else if (singleScore > 30) {
+                    textView.setText("아쉽네요\n" + singleScore + "점 입니다.\n 자신만의 질문과 답변을 만들어보세요!\n(설정에서 질문과 답변을 만들 수 있습니다.)");
+                }else  {
                     textView.setText(singleScore + "점 입니다.\n 자신만의 질문과 답변을 만들어보세요!\n(설정에서 질문과 답변을 만들 수 있습니다.)");
-                }else if (per <= 30) {
-                    // 상위 30이상
-                    textView.setText("상위 " + per + "% 입니다. 축하드립니다!\n자신만의 질문과 답변을 만들어보세요!\n(설정에서 질문과 답변을 만들 수 있습니다.)");
-                }else if (per <= 60) {
-                    // 상위 60이상
-                    textView.setText("상위 " + per + "% 입니다. 조금만 더 노력해보세요!\n자신만의 질문과 답변을 만들어보세요!\n(설정에서 질문과 답변을 만들 수 있습니다.)");
-                }else {
-                    textView.setText("상위 " + per + "% 입니다. 많이 노력하셔야 겠군요!\n자신만의 질문과 답변을 만들어보세요!\n(설정에서 질문과 답변을 만들 수 있습니다.)");
                 }
             }
         }else {

@@ -2,10 +2,12 @@ package com.example.quizmaster;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -61,6 +63,10 @@ public class AddData extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         queGbList.setAdapter(adapter);
 
+        /**
+         * 구분 콤보 클릭 이벤트
+         * quizlist 객체에 구분값을 저장한다
+         */
         queGbList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -74,6 +80,10 @@ public class AddData extends AppCompatActivity {
             }
         });
 
+        /**
+         * 저장버튼 클릭 이벤트
+         * 데이터를 저장한다
+         */
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -112,6 +122,10 @@ public class AddData extends AppCompatActivity {
             }
         });
 
+        /**
+         * 취소버튼 클릭 이벤트
+         * 화면을 종료시킨다
+         */
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -122,6 +136,10 @@ public class AddData extends AppCompatActivity {
             }
         });
 
+        /**
+         * 왼쪽 하단 터치시 이벤트
+         * 모든데이터를 삭제처리하고 첫 사용자 플래그값을 true로 변경한다.
+         */
         hiddenAdm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -178,6 +196,10 @@ public class AddData extends AppCompatActivity {
             }
         });
 
+        /**
+         * 오른쪽 하단 터치시 이벤트
+         * 데이터를 조회하여 LOG로 표출한다
+         */
         hiddenAdmList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -228,6 +250,24 @@ public class AddData extends AppCompatActivity {
                     }
 
                 }
+            }
+        });
+
+        /**
+         * ENTER 이벤트
+         * 엔터를 눌렀을 시 키보드를 내린다.
+         */
+        addQuestion.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                switch (i){
+                    case KeyEvent.KEYCODE_ENTER:
+                        InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(addQuestion.getWindowToken(), 0);    //hide keyboard
+                        break;
+                }
+                return false;
+
             }
         });
     }

@@ -24,7 +24,8 @@
             android:id="@+id/queGbList"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_weight="1"></Spinner>
+            android:layout_weight="1"
+            android:layout_marginRight="50dp"></Spinner>
 
     </LinearLayout>
 
@@ -52,7 +53,8 @@
             android:hint="질문을 입력하세요"
             android:gravity="center"
             android:layout_gravity="center"
-            android:background="@drawable/edit_text_round">
+            android:background="@drawable/edit_text_round"
+            android:layout_marginRight="50dp">
 
         </EditText>
 
@@ -81,7 +83,8 @@
             android:gravity="center"
             android:layout_gravity="center"
             android:hint="정답을 입력하세요"
-            android:background="@drawable/edit_text_round">
+            android:background="@drawable/edit_text_round"
+            android:layout_marginRight="50dp">
 
         </EditText>
 
