@@ -87,8 +87,8 @@ public class AddData extends AppCompatActivity {
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                quizList.setQuestion(addQuestion.getText().toString());
-                quizList.setAnswer(addAnswer.getText().toString());
+                quizList.setQuestion(addQuestion.getText().toString().replace(" ", ""));
+                quizList.setAnswer(addAnswer.getText().toString().replace(" ", ""));
 
                 if (StringUtils.isEmpty(quizList.getQueGb()) || "".equals(quizList.getQueGb())) {
                     Toast.makeText(getApplicationContext(), "구분을 선택해주세요", Toast.LENGTH_SHORT).show();
@@ -264,6 +264,24 @@ public class AddData extends AppCompatActivity {
                     case KeyEvent.KEYCODE_ENTER:
                         InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
                         imm.hideSoftInputFromWindow(addQuestion.getWindowToken(), 0);    //hide keyboard
+                        break;
+                }
+                return false;
+
+            }
+        });
+
+        /**
+         * ENTER 이벤트
+         * 엔터를 눌렀을 시 키보드를 내린다.
+         */
+        addAnswer.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                switch (i){
+                    case KeyEvent.KEYCODE_ENTER:
+                        InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(addAnswer.getWindowToken(), 0);    //hide keyboard
                         break;
                 }
                 return false;
