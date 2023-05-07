@@ -76,9 +76,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 RunDataBase runDataBase = new RunDataBase(getApplicationContext());
 
-                String queGb = d.substring(0, 10).replace(" ", "");
-                String question = d.substring(d.indexOf("question") + 8, d.indexOf("answer")).replaceAll("(\r\n|\r|\n|\n\r)", "")
-                        .replace(" ", "");
+                String queGb = d.substring(0, 8).replace(" ", "");
+                String question = d.substring(d.indexOf("question") + 8, d.indexOf("answer")).replaceAll("(\r\n|\r|\n|\n\r)", "");
                 String answer = d.substring(d.indexOf("answer") + 6, d.length()).replaceAll("(\r\n|\r|\n|\n\r)", "")
                         .replace(" ", "");
 
@@ -284,11 +283,11 @@ public class MainActivity extends AppCompatActivity {
     private boolean isStart() {
 
         SharedPreferences pref = getSharedPreferences("isFirst", Activity.MODE_PRIVATE);
-        boolean first = pref.getBoolean("isFirst", false);
+        boolean first = pref.getBoolean("isFirst", true);
 
-        if(first==false){
+        if(first){
             SharedPreferences.Editor editor = pref.edit();
-            editor.putBoolean("isFirst",true);
+            editor.putBoolean("isFirst",false);
             editor.commit();
             return true;
         }else{

@@ -123,6 +123,10 @@ public class RunDataBase extends Thread {
 
                         code = "0000";
                         break;
+                    case "allDelete":
+                        quizListDAO.deleteAllItems();
+                        code = "0000";
+                        break;
                 }
 
             }

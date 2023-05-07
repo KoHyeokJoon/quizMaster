@@ -65,7 +65,9 @@ public class MovieSingleServiceImpl extends AppCompatActivity implements StartGa
         result.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkResult();
+                if(checkResult()) {
+                    move();
+                }
             }
         });
 
@@ -84,7 +86,11 @@ public class MovieSingleServiceImpl extends AppCompatActivity implements StartGa
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(answer.getWindowToken(), 0);    //hide keyboard
+
+                if(checkResult()) {
+                    imm.hideSoftInputFromWindow(answer.getWindowToken(), 0);    //hide keyboard
+                    move();
+                }
                 return true;
             }
         });
@@ -203,13 +209,13 @@ public class MovieSingleServiceImpl extends AppCompatActivity implements StartGa
         overridePendingTransition(R.anim.none, R.anim.right_to_left); //자연스럽게 이동
     }
 
-    private void checkResult() {
+    private boolean checkResult() {
         //확인버튼
         String res = answer.getText().toString();
 
         if ("".equals(res)) {
             Toast.makeText(getApplicationContext(), "정답을 입력해주세요.", Toast.LENGTH_SHORT).show();
-            return;
+            return false;
         }
 
         if (res.replace(" ", "").equals(quizList.getAnswer().replace(" ", ""))) {
@@ -219,6 +225,6 @@ public class MovieSingleServiceImpl extends AppCompatActivity implements StartGa
             //오답 !
         }
 
-        move();
+        return true;
     }
 }

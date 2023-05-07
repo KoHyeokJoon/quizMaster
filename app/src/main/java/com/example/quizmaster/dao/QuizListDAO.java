@@ -33,6 +33,9 @@ public interface QuizListDAO {
     @Query("DELETE FROM QuizList WHERE queGb = :queGb")
     void deleteItems(String queGb);
 
+    @Query("DELETE FROM QuizList")
+    void deleteAllItems();
+
     @Query("SELECT COUNT(1) FROM QuizList WHERE queGb = :queGb AND answer = :answer")
     int dupCount(String queGb, String answer);
 

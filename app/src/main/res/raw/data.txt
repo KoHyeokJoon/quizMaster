@@ -20,3 +20,102 @@ D000idiom     question 지나친 겸손은 예의가 아니다. answer 과공비
 D000idiom     question 관중과 포숙의 사귐. 친구를 이해하고 알아주는 두터운 우정. answer 관포지교
 D000idiom     question 문을 비비고 서로 마주 대함. 학식이나 어떤 능력이 몰라보게 좋아지다. answer 괄목상대
 D000idiom     question 소뿔을 바로잡으려다 소를 잡는다. 작은 것에 연연하다 큰 일을 그르치다. answer 교각살우
+D000idiom     question 남의 환심을 사기 위해 말을 교묘하게 하고 표정을 좋게 꾸밈을 의미한다. answer 교언영색
+D000idiom     question 융통성이 없고 고집스런 경우, 즉 규칙에 얽매이어 변통할줄 모르는 사람을 일컫는다. answer 교주고슬
+D000idiom     question 배우는 것뿐만 아니라 가르쳐 보아야 학문을 성장시킬 수 있다는 말이다.  answer 교학상장
+D000idiom     question 굽이굽이 서린 창자라는 뜻으로, 굽이굽이 깊이 든 마음속이라는 말이다 answer 구곡간장
+D000idiom     question 먹을 가까이하면 검어진다는 뜻으로 좋지 못한 사람과 가까이 지내면 나쁜 것에 물들게 된다는 말 answer 근묵자흑
+D000idiom     question 큰 차이가 없이 거의 같고 조금 다르다는 말 answer 대동소이
+D000idiom     question 같은 병을 앓는 사람끼리 서로 가엾게 여긴다는 뜻으로 어려운 처지에 있는 사람끼리 서로 동정하고 공감한다는 말 answer 동병상련
+D000idiom     question 문 앞이 시장을 이룬다는 뜻으로 권세가 있거나 부자가 되어 집 문 앞이 방문객으로 넘쳐난다는 말 answer 문전성시
+D000idiom     question 백 번 쏘아 백 번 맞춘다는 뜻으로 모든 일이 계획대로 들어맞는다는 말 answer 백발백중
+D000idiom     question 동서남북 사방에서 들려오는 초나라의 노래라는 뜻으로 누구에게도 도움을 받을 수 없는 고립된 상태에 처했다는 말 answer 사면초가
+D000idiom     question 자기 몸을 희생하여 옳은 일을 이룬다는 뜻으로 의로운 일을 위해 목숨을 버린다는 말 answer 살신성인
+D000idiom     question 눈 위에 서리까지 더한다는 뜻으로 어려운 일이나 불행이 겹쳐서 한꺼번에 일어남을 이르는 말 answer 설상가상
+D000idiom     question 자기 논에 물 대기라는 뜻으로 자기의 이익만 먼저 생각하고 행동한다는 말 answer 아전인수
+D000idiom     question 입장을 바꾸어 다른 사람의 처지에서 생각하라는 말 answer 역지사지
+D000idiom     question 쇠귀에 경 읽기라는 뜻으로 아무리 가르치고 알려 주어도 도무지 알아듣지 못함을 이르는 말 answer 우이독경
+D000idiom     question 자기의 일은 자기가 받는다는 뜻으로 자신이 저지른 나쁜 행동이나 잘못이 결국 자기에게 되돌아온다는 말 answer 자업자득
+D000idiom     question 죽마를 타고 놀던 친구라는 뜻으로 어려서부터 함께 자란 친구를 이르는 말 answer 죽마고우
+D000idiom     question 푸른색은 쪽빛에서 나왔지만, 쪽빛보다 더 푸르다는 뜻으로 제자가 스승보다 나음을 비유하여 이르는 말 answer 청출어람
+D000idiom     question 한 치의 칼로 사람을 죽인다는 뜻으로 간단한 말로도 사람을 감동하게 할 수 있음을 이르는 말 answer 촌철살인
+D000idiom     question 다른 산의 돌이라는 뜻으로 다른 사람의 실수도 나에게 교훈이 될 수 있음을 이르는 말 answer 타산지석
+D000idiom     question 토끼가 죽으면 사냥개를 없앤다는 뜻으로 필요할 때 실컷 부려 먹다가 쓸모가 없어지면 헌신짝처럼 내버린다는 말 answer 토사구팽
+D000idiom     question 대나무를 쪼개는 기세라는 뜻으로 적을 거침없이 물리치고 당당하게 쳐들어가는 기세를 이르는 말 answer 파죽지세
+D000idiom     question 바람 앞에 놓인 등불이라는 뜻으로 매우 위태로움을 이르는 말 answer 풍전등화
+D000idiom     question 심부름을 간 사람이 아무 소식이 없을 때 이르는 말 answer 함흥차사
+D000idiom     question 이치에 맞지 않는 말을 끌어다가 자기에게 유리하게 꿰어 맞춤. answer 견강부회
+D000movie     question 동작그만, 밑장빼기냐? answer 타짜
+D000movie     question 전하, 신에게는 아직 12척의 배가 남아있사옵니다 answer 명량
+D000movie     question 너나 잘하세요 answer 친절한 금자씨
+D000movie     question 살아있네 answer 범죄와의 전쟁
+D000movie     question 호의가 계속되면 그게 권리인 줄 알아요 answer 부당거래
+D000movie     question 야 4885 너지? answer 추격자
+D000movie     question 비겁한 변명입니다, 날 쏘고가라 answer 실미도
+D000movie     question 알려줘야지,, 우리는 계속 싸우고 있다고 answer 암살
+D000movie     question 너의 젊음이 너의 노력으로 얻은 상이 아니듯, 내 늙음도 내 잘못으로 받은 벌이 아니다 answer 은교
+D000movie     question 누구냐 넌?, 웃어라, 모든 사람이 너와 함께 웃을 것이다. 울어라, 너 혼자 울 것이다 answer 올드보이
+D000movie     question 내일만 사는 놈은 오늘만 사는 놈한테 죽는다, 아직 한 발 남았다 answer 아저씨
+D000movie     question 무서워요 애국가를 불렀는데도 무서워요 answer 우리들의 행복한 시간
+D000movie     question 우리아이에게는 장애가 있어요, 초원이 다리는 백만불짜리 다리 answer 말아톤
+D000movie     question 어떻게 사랑이 변하니? answer 봄날은 간다
+D000movie     question 대한민국 주권은 국민에게 있고, 모든 권력은 국민으로부터 나온다. 국가란 국민입니다 answer 변호인
+D000movie     question 너 거기있고 나 여기있지? 아니지 너 여기있고 나 거기있지? answer 왕의 남자
+D000movie     question 견우야 미안해 나도 어쩔 수 없는 여자인가봐 answer 엽기적인 그녀
+D000movie     question 대한민국 학교 다 x까라 그래 answer 말죽거리 잔혹사
+D000movie     question 어이가 없네? answer 베테랑
+D000movie     question 넌 나에게 모욕감을 줬어 answer 달콤한 인생
+D000movie     question 밥은 먹고 다니냐? answer 살인의 추억
+D000movie     question 살려는 드릴게, 거 죽기 딱 좋은 날씨네 answer 신세계
+D000movie     question 얌마 도완득! answer 완득이
+D000movie     question 고마해라. 마이 묵었다 아이가, 니가가라 하와이 answer 친구
+D000movie     question 나 다시 돌아갈래 answer 박하사탕
+D000movie     question 이거 마시면 우리 사귀는 거다 answer 내 머리 속의 지우개
+D000movie     question 뭣이 중헌디, 미끼를 확 물어분 것이여 answer 곡성
+D000movie     question 모히또 가서 몰디브 한 잔? answer 내부자들
+D000movie     question 지나간 일에 대해 새로운 눈물을 낭비하지 말자 answer 신과함께
+D000movie     question 어찌, 내가 왕이 될 상인가? answer 관상
+D000movie     question 아들아 너는 계획이 다 있구나 answer 기생충
+D000movie     question 지금까지 이런 맛은 없었다 이것은 갈비인가 통닭인가 answer 극한직업
+D000sudo     question 가보로네 answer 보츠와나
+D000sudo     question 과테말라 시 answer 과테말라
+D000sudo     question 나이로비 answer 케냐
+D000sudo     question 뉴델리 answer 인도
+D000sudo     question 다카르 answer 세네갈
+D000sudo     question 더블린 answer 아일랜드
+D000sudo     question 도쿄 answer 일본
+D000sudo     question 도하 answer 카타르
+D000sudo     question 런던 answer 영국
+D000sudo     question 로마 answer 이탈리아
+D000sudo     question 로메 answer 토고
+D000sudo     question 룩셈부르크 시 answer 룩셈부르크
+D000sudo     question 리스본 answer 포르투갈
+D000sudo     question 리야드 answer 사우디아라비아
+D000sudo     question 마닐라 answer 필리핀
+D000sudo     question 마드리드 answer 스페인
+D000sudo     question 마카오 answer 마카오
+D000sudo     question 마푸투 answer 모잠비크
+D000sudo     question 말레 answer 몰디브
+D000sudo     question 멕시코 시티 answer 멕시코
+D000sudo     question 모가디슈 answer 소말리아
+D000sudo     question 모나코 answer 모나코
+D000sudo     question 모스크바 answer 러시아
+D000sudo     question 몬테비데오 answer 우루과이
+D000sudo     question 무스카트 answer 오만
+D000sudo     question 민스크 answer 벨라루스
+D000sudo     question 바그다드 answer 이라크
+D000sudo     question 바르샤바 answer 폴란드
+D000sudo     question 바마코 answer 말리
+D000sudo     question 반줄 answer 감비아
+D000sudo     question 방콕 answer 태국
+D000sudo     question 베른 answer 스위스
+D000sudo     question 베를린 answer 독일
+D000sudo     question 베이징 answer 중국
+D000sudo     question 보고타 answer 콜롬비아
+D000sudo     question 부다페스트 answer 헝가리
+D000sudo     question 부에노스아이레스 answer 아르헨티나
+D000sudo     question 브라질리아 answer 브라질
+D000sudo     question 브뤼셀 answer 벨기에
+D000sudo     question 산티아고 answer 칠레
+D000sudo     question 산호세 answer 코스타리카
+D000sudo     question 서울 answer 한국

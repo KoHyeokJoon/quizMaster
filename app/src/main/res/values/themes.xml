@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.QuizMaster" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#636262</item>
+        <item name="colorPrimary">#4E4B4B</item>
         <item name="colorPrimaryVariant">@color/black</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -12,11 +12,13 @@
 
 
         <!-- background color -->
-        <item name="android:windowBackground">#FFFFFF</item>
+        <item name="android:windowBackground">#F8F6F0</item>
 
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">#EF9191</item>
+        <item name="android:editTextColor">@color/black</item>
 
         <item name="windowNoTitle">true</item>
 
