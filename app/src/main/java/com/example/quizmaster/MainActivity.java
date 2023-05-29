@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 quizList.setQueGb(queGb);
                 quizList.setQuestion(question);
                 quizList.setAnswer(answer);
+                quizList.setCustomYn("N");
 
                 runDataBase.setQuizList(quizList);
                 runDataBase.setOrder("insert");

@@ -88,10 +88,14 @@ public class SudoFriendServiceImpl extends AppCompatActivity implements StartGam
 
         /**
          * 정답보기
+         * 타이머 진행중일시 return
          */
         showAnswerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(gameTimeInfo.getText().toString() != null && gameTimeInfo.getText().toString() != "") {
+                    return;
+                }
                 countDownTimer.start();
                 answer.setText(quizList.getAnswer());
             }
@@ -148,15 +152,12 @@ public class SudoFriendServiceImpl extends AppCompatActivity implements StartGam
                 startActivity(backIntent);
                 return;
             }
-
-            if (stage >= 10) {
-                end();
-            }
-
-
         }
 
-        countDownTimer.start();
+        if (stage >= 6) {
+            end();
+            return;
+        }
         try {
             quizList = quizLists.get((nextIndex)); //index 처리를 위함
         } catch (IndexOutOfBoundsException indexOutOfBoundsException) {
@@ -165,7 +166,7 @@ public class SudoFriendServiceImpl extends AppCompatActivity implements StartGam
         }
 
         question.setText(quizList.getQuestion());
-        answer.setText(quizList.getAnswer());
+//        answer.setText(quizList.getAnswer());
     }
 
     @Override

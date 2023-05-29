@@ -22,6 +22,9 @@ public class QuizList {
     @ColumnInfo(name = "useYn")
     public String useYn;
 
+    @ColumnInfo(name = "customYn")
+    public String customYn;
+
 
 
     public Integer getSeq() {
@@ -50,5 +53,13 @@ public class QuizList {
 
     public String getAnswer() {
         return this.answer;
+    }
+
+    public String getCustomYn() {
+        return customYn;
+    }
+
+    public void setCustomYn(String customYn) {
+        this.customYn = customYn;
     }
 }

@@ -83,12 +83,14 @@ public class AddData extends AppCompatActivity {
         /**
          * 저장버튼 클릭 이벤트
          * 데이터를 저장한다
+         * customYn 추가 2023.05.29
          */
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 quizList.setQuestion(addQuestion.getText().toString().replace(" ", ""));
                 quizList.setAnswer(addAnswer.getText().toString().replace(" ", ""));
+                quizList.setCustomYn("Y");
 
                 if (StringUtils.isEmpty(quizList.getQueGb()) || "".equals(quizList.getQueGb())) {
                     Toast.makeText(getApplicationContext(), "구분을 선택해주세요", Toast.LENGTH_SHORT).show();
@@ -108,12 +110,12 @@ public class AddData extends AppCompatActivity {
                 //정답 replace
                 addAnswer.setText(addAnswer.getText().toString().replace(" ", ""));
 
-                // main 접근불가, Thread 따기
+                /**
+                 * main 접근불가, Thread 따기
+                 */
                 RunDataBase runDataBase = new RunDataBase(getApplicationContext()
                         , quizList);
                 runDataBase.setOrder("insert");
-//                runDataBase.setOrder("dynamic");
-//                runDataBase.setQuery("SELECT * FROM QuizList");
                 runDataBase.start();
 
                 try {
